@@ -2,9 +2,12 @@ import { Header } from './Components/Header';
 import { MainRegisterBox } from './Components/MainRegisterBox';
 import { useState } from 'react';
 import { NameRegisterBox } from './Components/NameRegisterBox';
+import useRegistration from './useRegistration';
 
 function App() {
   const [page, setPage] = useState("first-page");
+  const { inputs, validate, handleChange } = useRegistration();
+
   if (page === "first-page") {
     return (
       <div className="App">
@@ -12,10 +15,14 @@ function App() {
         <h1>Ahoy you!</h1>
         <h1>Care to register?</h1>
         <div className='mainRegisterBox'>
-          <MainRegisterBox />
+          <MainRegisterBox inputs={inputs} handleChange={handleChange}/>
           <div className='buttons'>
             <a href='#'>Log in instead</a>
-            <button onClick={() => setPage("second-page")}>Next step</button>
+            <button onClick={() => {
+              if (validate()) {
+                setPage("second-page")
+              }
+            }}>Next step</button>
           </div>
         </div>
       </div>
