@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 98px;
+  align-items: center;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.logo {
+  height: 37.24px;
+}
+
+.mainregisterbox {
+  width: 600px;
+  height: 500px;
+  top: 204px;
+  padding: 64px;
+  border-radius: 24px;
+  background-color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
