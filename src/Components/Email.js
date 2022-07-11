@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Email = ({inputs, handleChange}) => {
+export const Email = ({email, emailError, handleChange}) => {
     return (
         <div>
             <label className='label'>EMAIL</label>
@@ -10,9 +10,9 @@ export const Email = ({inputs, handleChange}) => {
                 name='email'
                 className='input'
                 placeholder='Something ending with monterail.com'
-                value={inputs.email}
+                value={email}
                 onChange={handleChange} />
-                <div>{inputs.emailError}</div>
+                <div>{emailError}</div>
         </div>
     )
 }

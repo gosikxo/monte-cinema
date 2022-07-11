@@ -6,7 +6,7 @@ import useRegistration from './useRegistration';
 
 function App() {
   const [page, setPage] = useState("first-page");
-  const { inputs, validate, handleChange } = useRegistration();
+  const { password, passwordError, email, emailError, shouldShowPasswordErrors,  handleChange, validate} = useRegistration();
 
   if (page === "first-page") {
     return (
@@ -15,7 +15,7 @@ function App() {
         <h1>Ahoy you!</h1>
         <h1>Care to register?</h1>
         <div className='mainRegisterBox'>
-          <MainRegisterBox inputs={inputs} handleChange={handleChange}/>
+          <MainRegisterBox shouldShowPasswordErrors={shouldShowPasswordErrors} password={password} email={email} emailError={emailError} passwordError={passwordError} handleChange={handleChange}/>
           <div className='buttons'>
             <a href='#'>Log in instead</a>
             <button onClick={() => {
@@ -23,6 +23,7 @@ function App() {
                 setPage("second-page")
               }
             }}>Next step</button>
+
           </div>
         </div>
       </div>
