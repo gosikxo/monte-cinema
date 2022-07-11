@@ -12,7 +12,7 @@ export const Email = ({email, emailError, handleChange}) => {
                 placeholder='Something ending with monterail.com'
                 value={email}
                 onChange={handleChange} />
-                <div>{emailError}</div>
+                <div className='emailError'>{emailError}</div>
         </div>
     )
 }

@@ -3,49 +3,140 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+  width: 100%;
+
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -53,7 +144,8 @@ table {
 /* end of reset */
 
 
-body {
+body,
+.App {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -64,11 +156,9 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 1050px;
-
 
   background: #FFFFFF;
 }
@@ -79,26 +169,51 @@ code {
     monospace;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+  height: 1050px;
+}
+
 .header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  padding: 25px 48px;
+  gap: 311px;
+  width: 100%;
   height: 98px;
+  background: #FFFFFF;
+  justify-content: center;
   align-items: center;
-  padding-left: 48px;
-  padding-right: 48px;
-  display: flex;
-/* flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 25px 48px;
-gap: 311px;
-
-width: 1440px;
-height: 98px;
+}
 
 
+.title {
+  width: 603px;
+  height: 164px;
 
-background: #FFFFFF; */
+  font-family: 'Eczar';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 102%;
+
+
+  letter-spacing: -0.01em;
+
+
+  color: #343541;
+  margin-top: 124px;
+  margin-bottom: 40px;
+}
+
+.grey {
+  color: grey;
 }
 
 .logo {
@@ -106,44 +221,242 @@ background: #FFFFFF; */
 }
 
 .mainRegisterBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 64px;
+  gap: 40px;
+
   width: 600px;
   height: 500px;
-  top: 204px;
-  padding: 64px;
+
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 22px rgba(52, 53, 65, 0.15);
   border-radius: 24px;
-  background-color: white;
+
+}
+
+.emailAndPassword {
+  width: 100%;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .neutral {
-  color: black;
+  width: 100%;
+  height: 24px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+
+
+  letter-spacing: 0.04em;
+
+
+  color: #343541;
 }
 
 .green {
+  width: 100%;
+  height: 24px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+
+
+  letter-spacing: 0.04em;
+
   color: green;
 }
 
 .red {
+  width: 100%;
+  height: 24px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+
+
+  letter-spacing: 0.04em;
+
   color: red;
 }
 
 .input {
   display: flex;
-flex-direction: row;
-align-items: center;
-padding: 24px;
-gap: 10px;
-border-width: 0;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  gap: 10px;
+  border-width: 0;
 
-width: 100%;
-height: 56px;
+  width: 100%;
+  height: 56px;
 
-/* Gray / Athens Gray */
+  background: #F7F7F7;
+  border-radius: 8px;
+}
 
-background: #F7F7F7;
-border-radius: 8px;
+.input::placeholder {
+  width: 304px;
+  height: 21px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+
+  color: #85868D;
+}
+
+.label {
+  width: 43px;
+  height: 18px;
+
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+
+
+  color: #F47073;
+
+}
+
+
+.login {
+  width: 155px;
+  height: 18px;
+
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.015em;
+
+  text-decoration: none;
+
+  color: #EC1115;
+  /*
+jeszcze jakieś wymiary
+*/
+
+}
+
+.nextStep {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 10px;
+
+  width: 228px;
+  height: 56px;
+
+  border-width: 0;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #FFFFFF;
+  background: #EC1115;
+  border-radius: 64px;
+
+}
+
+.emailError {
+  color: red;
+  padding: 10px 0;
+}
+
+
+/* medium size scrren */
+@media screen and (max-width: 960px) {
+  .header {
+    gap: 150px;
+  }
+}
+
+/*smaller size screen*/
+@media screen and (max-width: 796px) {
+  .visibleNotOnMobiles {
+    display: none;
+  }
+
+  .header {
+    gap: 895px;
+  }
+
+  .title {
+    width: 460px;
+    height: 140px;
+    font-size: 60px;
+    margin-top: 60px;
+  }
+}
+
+/*small screen*/
+@media screen and (max-width: 600px) {
+  .title {
+    width: 302px;
+    height: 82px;
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  .mainRegisterBox {
+    padding: 44px;
+    gap: 20px;
+
+    width: 450px;
+    height: auto;
+
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .login {
+    padding: 30px;
+    font-size: 15px;
+  }
+
+  .nextStep {
+    font-size: 15px;
+    height: 40%;
+  }
+  .input {
+    height: 40px;
+  }
+  .input::placeholder {
+    font-size: 12px;
+  }
 }
