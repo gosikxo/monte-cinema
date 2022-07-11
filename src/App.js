@@ -7,7 +7,40 @@ import { DateTime } from "luxon";
 
 function App() {
   const [page, setPage] = useState("first-page");
-  const { password, passwordError, email, emailError, shouldShowPasswordErrors, handleChange, validateFirstStep, date, name, lastName, validateSecondStep, nameError, lastNameError, dateError } = useRegistration();
+  const {
+    password,
+    passwordError,
+    email,
+    emailError,
+    shouldShowPasswordErrors,
+    handleChange,
+    validateFirstStep,
+    date,
+    name,
+    lastName,
+    validateSecondStep,
+    nameError,
+    lastNameError,
+    dateError,
+    checkbox,
+    checkboxError
+ } = useRegistration();
+ console.log({password,
+  passwordError,
+  email,
+  emailError,
+  shouldShowPasswordErrors,
+  handleChange,
+  validateFirstStep,
+  date,
+  name,
+  lastName,
+  validateSecondStep,
+  nameError,
+  lastNameError,
+  dateError,
+  checkbox,
+  checkboxError})
 
   if (page === "first-page") {
     return (
@@ -47,7 +80,7 @@ function App() {
             <h1 className='grey'>Now your name</h1>
           </div>
           <div className='mainRegisterBox secondpage'>
-            <NameRegisterBox name={name} lastName={lastName} date={date} handleChange={handleChange} nameError={nameError} lastNameError={lastNameError} dateError={dateError}/>
+            <NameRegisterBox name={name} lastName={lastName} date={date} handleChange={handleChange} nameError={nameError} lastNameError={lastNameError} dateError={dateError} checkbox={checkbox} checkboxError={checkboxError} />
             <div className='buttons'>
               <a className='login' href='#'>Log in instead</a>
               <button className='nextStep'
@@ -69,10 +102,12 @@ function App() {
     <div className="App">
       <Header />
       <div className='content'>
-        <h1>Good job name!</h1>
-        <p>We have sent you an email to email.</p>
-        <p>Make sure to click the link from the message to activate your account.</p>
-        <button onClick={() => setPage("first-page")}>Go to homepage</button>
+        <div className='title'>
+          <h1>Good job {name}!</h1>
+        </div>
+        <p className='last-message'>We have sent you an email to <div className='bold'>{email}. </div><br></br>
+          Make sure to click the link from the message to activate your account.</p>
+        <button className='nextStep homepage' onClick={() => setPage("first-page")}>Go to homepage</button>
       </div>
     </div>
   );

@@ -210,7 +210,7 @@ p {
 
 .title {
   width: 603px;
-  height: 164px;
+  height: auto;
 
   font-family: 'Eczar';
   font-style: normal;
@@ -224,7 +224,8 @@ p {
 
   color: #343541;
   margin-top: 124px;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
+  text-align: center;
 }
 
 .grey {
@@ -360,6 +361,7 @@ p {
   color: #85868D;
 }
 
+
 .label {
   width: 43px;
   height: 18px;
@@ -407,7 +409,7 @@ p {
   padding: 40px;
   gap: 10px;
 
-  width: 228px;
+  width: 235px;
   height: 56px;
 
   border-width: 0;
@@ -420,23 +422,40 @@ p {
   background: #EC1115;
   border-radius: 64px;
   cursor: pointer;
-
 }
 
 .nextStep:hover {
   background: #A60C0E;
 }
 
-.nextStep:focus {
+.nextStep:active {
   background: #A60C0E;
   border: 5px solid #F47073;
 }
 
-/* .emailError {
-  color: red;
-  padding: 10px 0;
-} */
+.last-message {
+  width: auto;
+  height: 42px;
 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  margin-bottom: 48px;
+  color: #292A33;
+}
+
+.bold {
+  margin: none;
+  padding: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  display: inline;
+}
 
 /* medium size scrren */
 @media screen and (max-width: 960px) {
@@ -508,7 +527,7 @@ p {
   }
 
   .buttons {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .login {
@@ -518,7 +537,8 @@ p {
 
   .nextStep {
     font-size: 15px;
-    height: 40%;
+    width: 327px;
+    height: 56px;
   }
 
   .input {
@@ -527,5 +547,22 @@ p {
 
   .input::placeholder {
     font-size: 12px;
+  }
+
+  .homepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 10px;
+
+    width: 327px;
+    height: 56px;
+
+    /* Red / Cherry Red */
+
+    background: #EC1115;
+    border-radius: 64px;
   }
 }

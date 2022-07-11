@@ -11,7 +11,8 @@ export const Email = ({email, emailError, handleChange}) => {
                 className={`input ${emailError !== "" ? "red-border" : ""}`}
                 placeholder='Something ending with monterail.com'
                 value={email}
-                onChange={handleChange} />
+                onChange={handleChange}
+                />
         </div>
     )
 }

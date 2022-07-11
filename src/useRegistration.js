@@ -15,6 +15,8 @@ const useRegistration = () => {
     const [nameError, setNameError] = useState("");
     const [lastName, setLastName] = useState("");
     const [lastNameError, setLastNameError] = useState("");
+    const [checkbox, setCheckbox] = useState(false);
+    const [checkboxError, setCheckboxError] = useState("");
 
     const validateName = () => {
         if (name.length == 0) {
@@ -31,9 +33,29 @@ const useRegistration = () => {
         return true;
     }
 
+    const validateDate = () => {
+        if(!DateTime.fromISO(date).isValid) {
+            setDateError("Invalid date");
+            return false
+        }
+        if(DateTime.fromISO(date).diffNow("years").years > -18) {
+            setDateError("You should be minimum 18 years old");
+            return false;
+        }
+        return true;
+    }
+
+    const validateCheckbox = () => {
+        if(!checkbox) {
+            setCheckboxError("Invalid checkbox")
+            return false;
+        }
+        return true;
+    }
+
 
     const handleChange = e => {
-        const { name, value } = e.target;
+        const { name, value, checked } = e.target;
 
         if (name === "password") {
             setPassword(value);
@@ -56,6 +78,9 @@ const useRegistration = () => {
         if (name === "dateofbirth") {
             setDate(value)
         }
+        if(name === "checkbox") {
+            setCheckbox(checked)
+        }
     };
 
     const clearErrors = () => {
@@ -64,6 +89,7 @@ const useRegistration = () => {
         setDateError("");
         setLastNameError("");
         setNameError("")
+        setCheckboxError("")
     }
 
     const validateEmail = () => {
@@ -135,7 +161,10 @@ const useRegistration = () => {
             isValid = false;
         }
 
-        if (DateTime.fromISO(date).diffNow("years").years > -18) {
+        if (!validateDate()) {
+            isValid = false;
+        }
+        if(!validateCheckbox()) {
             isValid = false;
         }
 
@@ -144,7 +173,7 @@ const useRegistration = () => {
 
     return {
         handleChange, email, emailError, password, passwordError, shouldShowPasswordErrors, validateFirstStep,
-        date, name, lastName, validateSecondStep, nameError, lastNameError, dateError
+        date, name, lastName, validateSecondStep, nameError, lastNameError, dateError, checkbox, checkboxError
     };
 }
 

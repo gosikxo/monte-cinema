@@ -1,9 +1,7 @@
 import React from 'react'
-import { useState } from "react";
 
-
-export const NameRegisterBox = ({date, name, lastName, handleChange, lastNameError, nameError, dateError}) => {
-  console.log({date, name, lastName, handleChange, lastNameError, nameError, dateError})
+export const NameRegisterBox = ({ date, name, lastName, handleChange, lastNameError, nameError, dateError, checkbox, checkboxError }) => {
+  console.log({ date, name, lastName, handleChange, lastNameError, nameError, dateError, checkbox })
   return (
     <div>
       <label className='label'>FIRST NAME</label>
@@ -35,10 +33,14 @@ export const NameRegisterBox = ({date, name, lastName, handleChange, lastNameErr
         onChange={handleChange}
         value={date}
       />
-      <p className='age'>You should be mimium 18 years old</p>
+      <p className={`${dateError !== "" ? "red" : "neutral"}`}>You should be mimium 18 years old</p>
       <div className='checkbox1'>
-        <input type='checkbox' />
-        <p className='accept'>I accept <a href="#">Privacy Policy</a></p>
+        <input 
+          type='checkbox'
+          name="checkbox"
+          onChange={handleChange}
+          value={checkbox} />
+        <p className={`accept ${dateError !== "" ? "red" : "neutral"}`}>I accept <a href="#">Privacy Policy</a></p>
       </div>
     </div>
   )
