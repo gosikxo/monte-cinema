@@ -192,6 +192,21 @@ code {
   align-items: center;
 }
 
+p {
+  font-family: 'Roboto';
+  width: 100%;
+  height: 24px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+
+  letter-spacing: 0.04em;
+
+  color: #343541;
+}
 
 .title {
   width: 603px;
@@ -310,7 +325,26 @@ code {
 
   background: #F7F7F7;
   border-radius: 8px;
+  margin: 12px 0;
+  outline: 0;
+
 }
+
+.input:hover {
+  background-color: #E5E5E5;
+
+}
+
+.input.red-border {
+  border: 1px solid #EC1115;
+}
+
+.input:focus {
+  background: rgba(47, 128, 237, 0.1);
+  border: 1px solid #2F80ED;
+}
+
+
 
 .input::placeholder {
   width: 304px;
@@ -362,9 +396,6 @@ code {
   text-decoration: none;
 
   color: #EC1115;
-  /*
-jeszcze jakieś wymiary
-*/
 
 }
 
@@ -388,13 +419,23 @@ jeszcze jakieś wymiary
   color: #FFFFFF;
   background: #EC1115;
   border-radius: 64px;
+  cursor: pointer;
 
 }
 
-.emailError {
+.nextStep:hover {
+  background: #A60C0E;
+}
+
+.nextStep:focus {
+  background: #A60C0E;
+  border: 5px solid #F47073;
+}
+
+/* .emailError {
   color: red;
   padding: 10px 0;
-}
+} */
 
 
 /* medium size scrren */
@@ -420,6 +461,32 @@ jeszcze jakieś wymiary
     font-size: 60px;
     margin-top: 60px;
   }
+}
+
+.checkbox1 {
+  display: flex;
+  flex-direction: row;
+
+  width: 179px;
+  height: 21px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #292A33;
+
+
+}
+
+.age {
+  padding-bottom: 40px;
+}
+
+.secondpage {
+  height: 600px;
 }
 
 /*small screen*/
@@ -453,9 +520,11 @@ jeszcze jakieś wymiary
     font-size: 15px;
     height: 40%;
   }
+
   .input {
     height: 40px;
   }
+
   .input::placeholder {
     font-size: 12px;
   }

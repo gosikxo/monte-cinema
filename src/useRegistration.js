@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DateTime } from "luxon";
 
 const useRegistration = () => {
     const [email, setEmail] = useState("");
@@ -6,6 +7,30 @@ const useRegistration = () => {
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState([]);
     const [shouldShowPasswordErrors, setShouldShowPasswordErrors] = useState(false);
+
+
+    const [date, setDate] = useState("");
+    const [dateError, setDateError] = useState("");
+    const [name, setName] = useState("");
+    const [nameError, setNameError] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [lastNameError, setLastNameError] = useState("");
+
+    const validateName = () => {
+        if (name.length == 0) {
+            setNameError("Incorrect name")
+            return false;
+        }
+        return true;
+    }
+    const validateLastName = () => {
+        if (lastName.length == 0) {
+            setLastNameError("Incorrect last name")
+            return false;
+        }
+        return true;
+    }
+
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -19,11 +44,26 @@ const useRegistration = () => {
         if (name === "email") {
             setEmail(value);
         }
+
+        if (name === "firstname") {
+            setName(value)
+        }
+
+        if (name === "lastname") {
+            setLastName(value)
+        }
+
+        if (name === "dateofbirth") {
+            setDate(value)
+        }
     };
 
     const clearErrors = () => {
         setEmailError("");
         setPasswordError("");
+        setDateError("");
+        setLastNameError("");
+        setNameError("")
     }
 
     const validateEmail = () => {
@@ -67,7 +107,7 @@ const useRegistration = () => {
         return isValid;
     }
 
-    const validate = () => {
+    const validateFirstStep = () => {
         clearErrors();
         setShouldShowPasswordErrors(true);
         let isValid = true;
@@ -83,10 +123,28 @@ const useRegistration = () => {
         return isValid;
     }
 
-    console.log({ password, passwordError, email, emailError });
+    const validateSecondStep = () => {
+        clearErrors();
+        let isValid = true;
+
+        if (!validateName()) {
+            isValid = false;
+        }
+
+        if (!validateLastName()) {
+            isValid = false;
+        }
+
+        if (DateTime.fromISO(date).diffNow("years").years > -18) {
+            isValid = false;
+        }
+
+        return isValid;
+    }
 
     return {
-        handleChange, email, emailError, password, passwordError, shouldShowPasswordErrors, validate
+        handleChange, email, emailError, password, passwordError, shouldShowPasswordErrors, validateFirstStep,
+        date, name, lastName, validateSecondStep, nameError, lastNameError, dateError
     };
 }
 
