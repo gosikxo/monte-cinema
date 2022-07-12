@@ -90,6 +90,7 @@ const useRegistration = () => {
         setLastNameError("");
         setNameError("")
         setCheckboxError("")
+        setShouldShowPasswordErrors("")
     }
 
     const validateEmail = () => {
@@ -171,9 +172,20 @@ const useRegistration = () => {
         return isValid;
     }
 
+    const clearState = () => {
+        clearErrors();
+        setDate("");
+        setName("");
+        setLastName("");
+        setCheckbox(false);
+        setEmail("");
+        setPassword("")
+        
+    }
+
     return {
         handleChange, email, emailError, password, passwordError, shouldShowPasswordErrors, validateFirstStep,
-        date, name, lastName, validateSecondStep, nameError, lastNameError, dateError, checkbox, checkboxError
+        date, name, lastName, validateSecondStep, nameError, lastNameError, dateError, checkbox, checkboxError, clearState
     };
 }
 

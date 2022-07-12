@@ -23,24 +23,27 @@ function App() {
     lastNameError,
     dateError,
     checkbox,
+    checkboxError,
+    clearState
+  } = useRegistration();
+  console.log({
+    password,
+    passwordError,
+    email,
+    emailError,
+    shouldShowPasswordErrors,
+    handleChange,
+    validateFirstStep,
+    date,
+    name,
+    lastName,
+    validateSecondStep,
+    nameError,
+    lastNameError,
+    dateError,
+    checkbox,
     checkboxError
- } = useRegistration();
- console.log({password,
-  passwordError,
-  email,
-  emailError,
-  shouldShowPasswordErrors,
-  handleChange,
-  validateFirstStep,
-  date,
-  name,
-  lastName,
-  validateSecondStep,
-  nameError,
-  lastNameError,
-  dateError,
-  checkbox,
-  checkboxError})
+  })
 
   if (page === "first-page") {
     return (
@@ -107,7 +110,10 @@ function App() {
         </div>
         <p className='last-message'>We have sent you an email to <div className='bold'>{email}. </div><br></br>
           Make sure to click the link from the message to activate your account.</p>
-        <button className='nextStep homepage' onClick={() => setPage("first-page")}>Go to homepage</button>
+        <button className='nextStep homepage' onClick={() => {
+          setPage("first-page");
+          clearState();
+        }}>Go to homepage</button>
       </div>
     </div>
   );
