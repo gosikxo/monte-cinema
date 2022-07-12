@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const NameRegisterBox = ({ date, name, lastName, handleChange, lastNameError, nameError, dateError, checkbox, checkboxError }) => {
-  console.log({ date, name, lastName, handleChange, lastNameError, nameError, dateError, checkbox })
+  console.log({ date, name, lastName, handleChange, lastNameError, nameError, dateError, checkbox, checkboxError })
   return (
     <div>
       <label className='label'>FIRST NAME</label>
@@ -40,7 +40,7 @@ export const NameRegisterBox = ({ date, name, lastName, handleChange, lastNameEr
           name="checkbox"
           onChange={handleChange}
           value={checkbox} />
-        <p className={`accept ${dateError !== "" ? "red" : "neutral"}`}>I accept <a href="#">Privacy Policy</a></p>
+        <p className={`accept ${checkboxError !== "" ? "red" : "neutral"}`}>I accept <a href="#" className={`${checkboxError !== "" ? "red" : "neutral"}`}>Privacy Policy</a></p>
       </div>
     </div>
   )
