@@ -62,10 +62,11 @@ export const NameRegisterBox = ({
           name="checkbox"
           onChange={handleChange}
           value={checkbox}
+          className="checkbox"
         />
         <p className={`accept ${checkboxError !== "" ? "red" : "neutral"}`}>
           I accept {/* eslint-disable-next-line */}
-          <a href="#" className={`${checkboxError !== "" ? "red" : "neutral"}`}>
+          <a href="#" className={`accept ${checkboxError !== "" ? "red" : "neutral"}`}>
             Privacy Policy
           </a>
         </p>
