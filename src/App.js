@@ -26,7 +26,7 @@ function App() {
     checkboxError,
     clearState,
   } = useRegistration();
-  
+
   if (page === "first-page") {
     return (
       <div className="App">
