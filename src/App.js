@@ -26,25 +26,7 @@ function App() {
     checkboxError,
     clearState,
   } = useRegistration();
-  console.log({
-    password,
-    passwordError,
-    email,
-    emailError,
-    shouldShowPasswordErrors,
-    handleChange,
-    validateFirstStep,
-    date,
-    name,
-    lastName,
-    validateSecondStep,
-    nameError,
-    lastNameError,
-    dateError,
-    checkbox,
-    checkboxError,
-  });
-
+  
   if (page === "first-page") {
     return (
       <div className="App">

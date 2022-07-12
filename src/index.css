@@ -560,3 +560,88 @@ p {
     border-radius: 64px;
   }
 }
+
+/* mobile */
+@media screen and (max-width: 414px) {
+  .title {
+    width: 302px;
+    height: 82px;
+    font-size: 34px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .mainRegisterBox {
+    padding: 44px;
+    gap: 20px;
+
+    width: 300px;
+    height: auto;
+  }
+
+  .buttons {
+    flex-direction: column-reverse;
+  }
+
+  .login {
+    padding: 30px;
+    font-size: 15px;
+  }
+
+  .nextStep {
+    font-size: 15px;
+    width: 200px;
+    height: 40px;
+  }
+
+  .input {
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .input::placeholder {
+    font-size: 12px;
+  }
+
+  .homepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 10px;
+
+    width: 327px;
+    height: 56px;
+
+    /* Red / Cherry Red */
+
+    background: #ec1115;
+    border-radius: 64px;
+  }
+
+  .absolute {
+    width: 35px;
+
+  }
+
+  .red {
+    font-size: 10px;
+  }
+
+  .neutral {
+    font-size: 10px;
+  }
+
+  .homepage {
+    width: 250px;
+    height: 56px;
+    margin-top: 20px;
+  }
+
+  .last-message {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+}

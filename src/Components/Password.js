@@ -28,7 +28,7 @@ export const Password = ({
       <div className="relative">
         <input
           id="password"
-          type={`${showPassword == false ? "text" : "password"}`}
+          type={`${showPassword == true ? "text" : "password"}`}
           name="password"
           className="input password"
           placeholder="Enter your password"
