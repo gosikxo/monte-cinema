@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Site link
 
-Site link: https://splendorous-chaja-191ae9.netlify.app/
+https://splendorous-chaja-191ae9.netlify.app/
 
 # Getting Started with Create React App
 
