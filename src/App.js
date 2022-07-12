@@ -118,7 +118,7 @@ function App() {
           Make sure to click the link from the message to activate your account.
         </p>
         <button
-          className="nextStep homepage"
+          className="homepage"
           onClick={() => {
             setPage("first-page");
             clearState();

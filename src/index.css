@@ -403,7 +403,7 @@ p {
   padding: 40px;
   gap: 10px;
 
-  width: 235px;
+  width: 228px;
   height: 56px;
 
   border-width: 0;
@@ -503,6 +503,41 @@ p {
   height: 600px;
 }
 
+.homepage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 10px;
+
+  width: 335px;
+  height: 56px;
+
+  border-width: 0;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #ffffff;
+  background: #ec1115;
+  border-radius: 64px;
+  cursor: pointer;
+
+  /* to not change height when active */
+  border: 5px solid transparent;
+}
+
+.homepage:hover {
+  background: #a60c0e;
+}
+
+.homepage:active {
+  background: #a60c0e;
+  border: 5px solid #f47073;
+}
+
 /*small screen*/
 @media screen and (max-width: 600px) {
   .title {
@@ -529,12 +564,6 @@ p {
     font-size: 15px;
   }
 
-  .nextStep {
-    font-size: 15px;
-    width: 327px;
-    height: 56px;
-  }
-
   .input {
     height: 40px;
   }
@@ -543,14 +572,18 @@ p {
     font-size: 12px;
   }
 
-  .homepage {
+  .nextStep, .homepage {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px;
     gap: 10px;
 
+    width: auto;
+    height: 56px;
+
+    font-size: 15px;
     width: 327px;
     height: 56px;
 
@@ -568,7 +601,7 @@ p {
     height: 82px;
     font-size: 34px;
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .mainRegisterBox {
@@ -591,7 +624,8 @@ p {
   .nextStep {
     font-size: 15px;
     width: 200px;
-    height: 40px;
+    height: 30px;
+    padding: 20px;
   }
 
   .input {
@@ -608,10 +642,10 @@ p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     gap: 10px;
 
-    width: 327px;
+    width: 200px;
     height: 56px;
 
     /* Red / Cherry Red */
@@ -621,7 +655,7 @@ p {
   }
 
   .absolute {
-    width: 35px;
+    width: 30px;
   }
 
   .red {
@@ -630,12 +664,6 @@ p {
 
   .neutral {
     font-size: 10px;
-  }
-
-  .homepage {
-    width: 250px;
-    height: 56px;
-    margin-top: 20px;
   }
 
   .last-message {
