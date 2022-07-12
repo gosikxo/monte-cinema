@@ -19,14 +19,14 @@ const useRegistration = () => {
   const [checkboxError, setCheckboxError] = useState("");
 
   const validateName = () => {
-    if (name.length == 0) {
+    if (name.length === 0) {
       setNameError("Incorrect name");
       return false;
     }
     return true;
   };
   const validateLastName = () => {
-    if (lastName.length == 0) {
+    if (lastName.length === 0) {
       setLastNameError("Incorrect last name");
       return false;
     }

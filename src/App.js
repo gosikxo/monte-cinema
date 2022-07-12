@@ -2,8 +2,8 @@ import { Header } from "./Components/Header";
 import { MainRegisterBox } from "./Components/MainRegisterBox";
 import { useState } from "react";
 import { NameRegisterBox } from "./Components/NameRegisterBox";
+import { LogInLink } from "./Components/LogInLink";
 import useRegistration from "./useRegistration";
-import { DateTime } from "luxon";
 
 function App() {
   const [page, setPage] = useState("first-page");
@@ -47,9 +47,7 @@ function App() {
               handleChange={handleChange}
             />
             <div className="buttons">
-              <a href="#" className="login">
-                Log in instead
-              </a>
+              <LogInLink />
               <button
                 className="nextStep"
                 onClick={() => {
@@ -89,9 +87,7 @@ function App() {
               checkboxError={checkboxError}
             />
             <div className="buttons">
-              <a className="login" href="#">
-                Log in instead
-              </a>
+              <LogInLink />
               <button
                 className="nextStep"
                 onClick={() => {

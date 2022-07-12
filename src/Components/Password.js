@@ -28,14 +28,19 @@ export const Password = ({
       <div className="relative">
         <input
           id="password"
-          type={`${showPassword == true ? "text" : "password"}`}
+          type={`${showPassword === true ? "text" : "password"}`}
           name="password"
           className="input password"
           placeholder="Enter your password"
           value={password}
           onChange={handleChange}
         />
-        <img src="/eye.svg" className="absolute" onClick={toggleIsLoading} />
+        <img
+          src="/eye.svg"
+          className="absolute"
+          alt="eye"
+          onClick={toggleIsLoading}
+        />
       </div>
       <p
         className={getErrorState({

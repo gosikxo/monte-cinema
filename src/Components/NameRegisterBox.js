@@ -64,7 +64,7 @@ export const NameRegisterBox = ({
           value={checkbox}
         />
         <p className={`accept ${checkboxError !== "" ? "red" : "neutral"}`}>
-          I accept{" "}
+          I accept {/* eslint-disable-next-line */}
           <a href="#" className={`${checkboxError !== "" ? "red" : "neutral"}`}>
             Privacy Policy
           </a>
